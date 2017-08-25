@@ -22,7 +22,7 @@ abstract class BaseItemReader<T> extends JdbcCursorItemReader {
 
     @PostConstruct
     public void init() {
-        setDataSource(persistenceConfiguration.dataSourceGpv());
+        setDataSource(persistenceConfiguration.dataSource());
         setSql(getSqlQueryReader());
 
         RowMapper<T> rowMapper = buildRowMapper();
